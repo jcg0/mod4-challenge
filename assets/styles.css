@@ -1,0 +1,18 @@
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 140%;
+}
+
+main {
+  margin: auto;
+  text-align: center;
+  font-size: 200%;
+}
+
+button {
+  height: 50px;
+  width: 125px;
+  font-size: 75%;
+}
