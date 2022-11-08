@@ -5,6 +5,7 @@ const ol = document.querySelector("#ol");
 const span = document.querySelector("#span");
 const validation = document.querySelector("#validation");
 const quizSection = document.querySelector("#quizSection");
+const div = document.querySelector("#div");
 let scoreEl = document.querySelector("#score");
 let timerEl = document.querySelector("#timer");
 
@@ -39,8 +40,6 @@ let questionTemplate = [
 ];
 
 function checkAnswer(event) {
-  console.log(event.target.innerText);
-  console.log(questionTemplate[questionCount].answer);
   if (event.target.innerText === questionTemplate[questionCount].answer) {
     console.log(true);
     scoreEl.innerText = ++score;
@@ -53,26 +52,25 @@ function checkAnswer(event) {
     timer.innerText = timer - 5;
   }
 
-  if (questionCount >= questionTemplate.length) {
-    endQuiz();
-  }
-
   questionCount++;
   for (let i = 0; i < questionTemplate.length; i++) {
     span.innerText = questionTemplate[questionCount].question;
-    ol.childNodes[3].innerText = questionTemplate[questionCount].selection[0];
-    ol.childNodes[4].innerText = questionTemplate[questionCount].selection[1];
-    ol.childNodes[5].innerText = questionTemplate[questionCount].selection[2];
-    ol.childNodes[6].innerText = questionTemplate[questionCount].selection[3];
+    ol.childNodes[0].innerText = questionTemplate[questionCount].selection[0];
+    ol.childNodes[1].innerText = questionTemplate[questionCount].selection[1];
+    ol.childNodes[2].innerText = questionTemplate[questionCount].selection[2];
+    ol.childNodes[3].innerText = questionTemplate[questionCount].selection[3];
+  }
+
+  if (questionCount === questionTemplate[questionCount].question) {
+    endQuiz();
+    return;
   }
 }
 
 function endQuiz() {
   clearInterval(timerInterval);
-  if (questionCount >= questionTemplate[questionCount].question) {
-    quizSection.remove();
-    let div = document.createElement("div");
-    div.innerText = "Game Over";
+  if (questionCount === questionTemplate[questionCount].question) {
+    div.innerText = `quiz over here is you score: ${score}`;
   }
 }
 
@@ -93,7 +91,10 @@ function startGame() {
     timerInterval = setInterval(function () {
       timer--;
       timerEl.innerText = timer;
-      if (timer === 0) {
+      if (!timer) {
+        clearInterval(timerInterval);
+        quizSection.remove();
+        div.innerText = `Game Over. Here is your score: ${score}`;
       }
     }, 1000);
   });
