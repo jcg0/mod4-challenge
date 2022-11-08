@@ -10,16 +10,30 @@
   <body>
     <header>
       <span>See High Scores</span>
-      <span>Time:</span>
+      <span id="timer">Time:</span>
     </header>
-    <main>
-      <h1>Welcome to the coding quiz!</h1>
-      <p>
-        Try to answer the questions and test your knowledge of all things
-        coding!
-        <br />To start the quick click the 'Start' button.
-      </p>
-      <button id="startBtn">Start</button>
+    <main id="container" class="main">
+      <section id="landingSection">
+        <h1>Welcome to the coding quiz!</h1>
+        <p>
+          Try to answer the questions and test your knowledge of all things
+          coding!
+          <br />To start the quick click the 'Start' button.
+        </p>
+        <button id="startBtn">Start</button>
+      </section>
+
+      <section id="quizSection">
+        <span id="span"></span>
+        <div id="validation"></div>
+        <div id="score"></div>
+        <ol id="ol" class="ol">
+          <!-- <li></li>
+        <li></li>
+        <li></li>
+        <li></li> -->
+        </ol>
+      </section>
     </main>
 
     <script src="./assets/app.js"></script>
