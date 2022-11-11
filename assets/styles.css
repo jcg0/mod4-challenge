@@ -33,4 +33,11 @@ ol{
   
 }
 
+form {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  padding: 4px;
+}
+
 

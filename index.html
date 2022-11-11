@@ -9,15 +9,15 @@
   </head>
   <body>
     <header>
-      <span id="high-score">See High Scores</span>
+      <a id="high-score" href="/highscores.html">See High Scores</a>
       <span id="timer">Time:</span>
     </header>
     <main id="container" class="main">
       <section id="landingSection">
-        <h1>Welcome to the coding quiz!</h1>
+        <h1>Welcome to the Lord of the Rings quiz!</h1>
         <p>
           Try to answer the questions and test your knowledge of all things
-          coding!
+          Middle Earth!
           <br />To start the quick click the 'Start' button.
         </p>
         <button id="startBtn">Start</button>
@@ -26,13 +26,17 @@
       <section id="quizSection">
         <span id="span"></span>
         <div id="validation"></div>
-        <div id="score"></div>
+        <div id="score" name="score"></div>
         <div id="ol" class="ol"></div>
       </section>
       <div id="div"></div>
     </main>
     <section>
-      <form action="" id="form"></form>
+      <form action="" id="form">
+        <span>Submit your initials</span>
+        <input type="text" name="initials" id="initials" />
+        <input type="submit" id="submit" />
+      </form>
     </section>
     <script src="./assets/app.js"></script>
   </body>

@@ -20,56 +20,69 @@ timerEl.innerText = timer;
 
 let questionTemplate = [
   {
-    question: "question one",
-    selection: ["answer 1", "answer 2", "answer 3", "answer 4"],
-    answer: "answer 3",
+    question: "What character is not part of the Fellowship?",
+    selection: ["Gandalf", "Boromir", "Pippen", "Haldir"],
+    answer: "Haldir",
   },
   {
-    question: "question two",
-    selection: ["answer 5", "answer 6", "answer 7", "answer 8"],
-    answer: "answer 6",
+    question: "How many rings of power existed in middle earth?",
+    selection: ["One", "Three", "Eleven", "Twenty"],
+    answer: "Twenty",
   },
   {
-    question: "question three",
-    selection: ["answer 9", "answer 10", "answer 11", "answer 12"],
-    answer: "answer 9",
+    question: "What is the name of Frodo's sword?",
+    selection: ["Isildur's Bane", "Elrond", "Sting", "Embercleve"],
+    answer: "Sting",
   },
   {
-    question: "question four",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question: "whose nickname is Sharkey?",
+    selection: ["Sauron", "Sarumon", "Perriwinkle", "Durin's Bane"],
+    answer: "Sarumon",
   },
   {
-    question: "question five",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question: "Where do the Hobbits live?",
+    selection: ["Valinor", "Gondor", "Rohan", "The Shire"],
+    answer: "The Shire",
   },
   {
-    question: "question six",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question: "Who is the rightful heir to the throne of Gondor?",
+    selection: ["Throndir", "Aragorn", "Boromir", "Denethor"],
+    answer: "Aragorn",
   },
   {
-    question: "question seven",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question:
+      "During the path of the dead whose four sons rode with Aragorn, Legolas, and Gimli",
+    selection: ["Jim Raynor", "Elrond", "Théoden", "Denethor"],
+    answer: "Elrond",
   },
   {
-    question: "question eight",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question: "Which forest does Treebeard belong to?",
+    selection: [
+      "Mirkwood",
+      "Tom Bombadil's Old Forest",
+      "Lothlórien",
+      "Fangorn Forest",
+    ],
+    answer: "Fangorn Forest",
   },
   {
-    question: "question nine",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question: "What the are hooded riders in black called?",
+    selection: ["Nazgul", "Fellbeasts", "Goblin", "Balrog"],
+    answer: "Nazgul",
   },
   {
-    question: "question ten",
-    selection: ["answer 13", "answer 14", "answer 15", "answer 16"],
-    answer: "answer 16",
+    question: "Who bites the ring off Frodo's finger in Mt.Doom",
+    selection: ["Gollum", "Gimli", "Sam", "Sauron"],
+    answer: "Gollum",
   },
 ];
+
+//need to complete the localstorage of the score and the initials and render them to another page.
+function highScores() {
+  let initials = document.querySelector("#initials").value;
+  localStorage.setItem("score", JSON.stringify(score));
+  localStorage.setItem("initials", initials);
+}
 
 function checkAnswer(event) {
   // console.log(event.target.innerText);
@@ -91,6 +104,7 @@ function checkAnswer(event) {
   }
   questionCount++;
 
+  //this block of code is giving me the most trouble and is a place to start working from in the futurs
   if (questionCount === questionTemplate[questionCount].length || timer <= 0) {
     endQuiz();
   } else {
