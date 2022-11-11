@@ -19,14 +19,18 @@ button {
 }
 
 ol{
+  height: 20px;
+  width: 35px;
   display: block;
-  justify-self: center;
   padding: 15%;
 }
 
-li{
-  margin: 20px;
-  padding: 5px;
+.btn {
+  
+  height: 40px;
+  width: 50%;
+  margin: 10px;
+  
 }
 
 
